@@ -10,11 +10,11 @@ class Tuple
     end
 
     def vector?
-        self.w == 0
+        self.w == 0.0
     end
 
     def point?
-        !vector
+        self.w == 1.0
     end
 
 
