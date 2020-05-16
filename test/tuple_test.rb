@@ -36,4 +36,10 @@ class TupleTest < Minitest::Test
         end
     end
 
+    describe 'a tuple that subtracts another tuple' do
+        a = Tuple.new(5.5, 5.5, 5.5, 1.0)
+        b = Tuple.new(3.3, 3.3, 3.3, 0.0)
+        it "returns the difference between two tuples" do
+            assert tuple_a
+
 end
