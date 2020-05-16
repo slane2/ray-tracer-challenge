@@ -36,6 +36,14 @@ class TupleTest < Minitest::Test
         end
     end
 
+    describe 'a tuple that adds another tuple' do
+        a = Tuple.new(5.5, 5.5, 5.5, 1.0)
+        b = Tuple.new(3.3, 3.3, 3.3, 0.0)
+        it "returns the sum of two tuples" do
+            assert (a + b).equal?Tuple.new(8.8, 8.8, 8.8, 1.0)
+        end
+    end
+
     describe 'a tuple that subtracts another tuple' do
         a = Tuple.new(5.5, 5.5, 5.5, 1.0)
         b = Tuple.new(3.3, 3.3, 3.3, 0.0)
