@@ -40,6 +40,8 @@ class TupleTest < Minitest::Test
         a = Tuple.new(5.5, 5.5, 5.5, 1.0)
         b = Tuple.new(3.3, 3.3, 3.3, 0.0)
         it "returns the difference between two tuples" do
-            assert tuple_a
+            assert (a - b).equal?Tuple.new(2.2, 2.2, 2.2, 1.0)
+        end
+    end
 
 end
