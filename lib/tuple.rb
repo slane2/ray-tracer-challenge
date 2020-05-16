@@ -17,5 +17,7 @@ class Tuple
         self.w == 1.0
     end
 
-
+    def equal?(other)
+        self.x == other.x && self.y == other.y && self.z == other.z && self.w == other.w
+    end
 end
