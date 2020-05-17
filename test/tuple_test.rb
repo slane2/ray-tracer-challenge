@@ -6,6 +6,8 @@ require_relative '../lib/tuple'
 
 class TupleTest < Minitest::Test
 
+    # let(:vector) { Tuple.new(x: 3.3, y: 3.3, z: 3.3, w: 0) }
+
     describe 'a tuple with w = 0.0' do
         tuple = Tuple.new(9.7, 9.7, 9.7, 0.0)
         it "is a vector" do
@@ -36,17 +38,12 @@ class TupleTest < Minitest::Test
         end
     end
 
-    describe 'a tuple that adds another tuple' do
-        a = Tuple.new(5.5, 5.5, 5.5, 1.0)
-        b = Tuple.new(3.3, 3.3, 3.3, 0.0)
-        it "returns the sum of two tuples" do
-            assert (a + b).equal?Tuple.new(8.8, 8.8, 8.8, 1.0)
-        end
-    end
-
     describe 'a vector that adds another vector' do
         a = Tuple.new(5.5, 5.5, 5.5, 0.0)
         b = Tuple.new(3.3, 3.3, 3.3, 0.0)
+        it "returns the sum of two tuples" do
+            assert (a + b).equal?Tuple.new(8.8, 8.8, 8.8, 0.0)
+        end
         it "returns a vector" do
             assert (a + b).vector?
         end
@@ -75,14 +72,10 @@ class TupleTest < Minitest::Test
         it "returns a point" do
             assert (a - b).point?
         end
-    end
-
-    describe 'a point that subtracts a vector' do
-        a = Tuple.new(5.5, 5.5, 5.5, 1.0)
-        b = Tuple.new(3.3, 3.3, 3.3, 0.0)
-        it "returns the difference between two tuples" do
-            assert (a - b).equal?Tuple.new(2.2, 2.2, 2.2, 1.0)
+        it "does not return a vector" do
+            refute (a - b).vector?
         end
     end
+
 
 end
