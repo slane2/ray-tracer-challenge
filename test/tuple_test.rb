@@ -44,7 +44,26 @@ class TupleTest < Minitest::Test
         end
     end
 
-    describe 'a tuple that subtracts another tuple' do
+    describe 'a vector that adds another vector' do
+        a = Tuple.new(5.5, 5.5, 5.5, 0.0)
+        b = Tuple.new(3.3, 3.3, 3.3, 0.0)
+        it "returns a vector" do
+            assert (a + b).vector?
+        end
+    end
+
+    describe 'a point that subtracts a vector' do
+        a = Tuple.new(5.5, 5.5, 5.5, 1.0)
+        b = Tuple.new(3.3, 3.3, 3.3, 0.0)
+        it "returns the difference between two tuples" do
+            assert (a - b).equal?Tuple.new(2.2, 2.2, 2.2, 1.0)
+        end
+        it "returns a point" do
+            assert (a - b).point?
+        end
+    end
+
+    describe 'a point that subtracts a vector' do
         a = Tuple.new(5.5, 5.5, 5.5, 1.0)
         b = Tuple.new(3.3, 3.3, 3.3, 0.0)
         it "returns the difference between two tuples" do
