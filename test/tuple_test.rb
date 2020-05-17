@@ -55,6 +55,17 @@ class TupleTest < Minitest::Test
         end
     end
 
+    describe 'a vector that adds a point' do
+        a = Tuple.new(5.5, 5.5, 5.5, 0.0)
+        b = Tuple.new(3.3, 3.3, 3.3, 1.0)
+        it "returns a point" do
+            assert (a + b).point?
+        end
+        it "does not return a vector" do
+            refute (a + b).vector?
+        end
+    end
+
     describe 'a point that subtracts a vector' do
         a = Tuple.new(5.5, 5.5, 5.5, 1.0)
         b = Tuple.new(3.3, 3.3, 3.3, 0.0)
