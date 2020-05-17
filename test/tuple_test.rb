@@ -77,5 +77,15 @@ class TupleTest < Minitest::Test
         end
     end
 
+    describe 'a point that subtracts a point' do
+        a = Tuple.new(5.5, 5.5, 5.5, 1.0)
+        b = Tuple.new(3.3, 3.3, 3.3, 1.0)
+        it "returns a vector" do
+            assert (a - b).vector?
+        end
+        it "does not return a point" do
+            refute (a - b).point?
+        end
+    end
 
 end
