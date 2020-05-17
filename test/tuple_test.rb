@@ -50,6 +50,9 @@ class TupleTest < Minitest::Test
         it "returns a vector" do
             assert (a + b).vector?
         end
+        it "does not return an point" do
+            refute (a + b).point?
+        end
     end
 
     describe 'a point that subtracts a vector' do
