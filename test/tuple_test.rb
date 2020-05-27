@@ -30,7 +30,7 @@ class TupleTest < Minitest::Test
 
     end
 
-    describe 'a tuple with variables that match another tuple' do
+    describe 'equality' do
         tuple_a = Tuple.new(9.7,9.7,9.7,1.0)
         tuple_b = Tuple.new(9.7,9.7,9.7,1.0)
         it "is equal to the other tuple" do
@@ -38,7 +38,7 @@ class TupleTest < Minitest::Test
         end
     end
 
-    describe 'a vector that adds another vector' do
+    describe 'vector addition' do
         a = Tuple.new(5.5, 5.5, 5.5, 0.0)
         b = Tuple.new(3.3, 3.3, 3.3, 0.0)
         it "returns the sum of two tuples" do
@@ -85,6 +85,15 @@ class TupleTest < Minitest::Test
         end
         it "does not return a point" do
             refute (a - b).point?
+        end
+    end
+
+    describe 'negation' do
+        a = Tuple.new(5.5, 5.5, 5.5, 0.0)
+        b = Tuple.new(0.0, 0.0, 0.0, 0.0)
+
+        it "negates a vector" do
+            assert a.negate.equal?Tuple.new(b - a)
         end
     end
 
