@@ -39,4 +39,7 @@ class Tuple
         self.z = 0.0 - self.z
     end
 
+    def *(other)
+        Tuple.new((self.x * other.x), (self.y * other.y), (self.z * other.z), (self.w * other.w))
+    end
 end
