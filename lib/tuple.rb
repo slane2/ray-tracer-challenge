@@ -42,4 +42,8 @@ class Tuple
     def *(multiplier)
         Tuple.new((self.x * multiplier), (self.y * multiplier), (self.z * multiplier), (self.w * multiplier))
     end
+
+    def *(divisor)
+        Tuple.new((self.x / divisor), (self.y / divisor), (self.z / divisor), (self.w / divisor))
+    end
 end
