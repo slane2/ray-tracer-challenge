@@ -107,4 +107,10 @@ class TupleTest < Minitest::Test
         end
     end
 
+    describe 'multiplication' do
+        a = Tuple.new(1.0, -2.0, 3.0, -4.0)
+        it "returns the product of a tuple and a number" do
+            assert (a * 3.5).equal?Tuple.new(3.5, -7.0, 10.5, -14)
+        end
+    end
 end
