@@ -89,13 +89,21 @@ class TupleTest < Minitest::Test
     end
 
     describe 'negation' do
-        a = Tuple.new(5.5, 5.5, 5.5, 0.0)
-        b = Tuple.new(0.0, 0.0, 0.0, 0.0)
-        negated_vector = (b-a)
+        vector = Tuple.new(5.5, 5.5, 5.5, 0.0)
+        tuple = Tuple.new(5.5, 5.5, 5.5, 1.0)
+        zero_vector = Tuple.new(0.0, 0.0, 0.0, 0.0)
+        zero_tuple = Tuple.new(0.0, 0.0, 0.0, 2.0)
+        negated_vector = (zero_vector-vector)
+        negated_tuple = (zero_tuple - tuple)
 
         it "negates a vector" do
-            a.negate
-            assert a.equal?negated_vector
+            vector.negate
+            assert vector.equal?negated_vector
+        end
+
+        it "negates a tuple" do
+            tuple.negate
+            assert tuple.equal?negated_tuple
         end
     end
 
