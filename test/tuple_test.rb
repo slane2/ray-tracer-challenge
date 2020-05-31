@@ -109,22 +109,22 @@ class TupleTest < Minitest::Test
 
     describe 'multiplication by a scalar' do
         a = Tuple.new(1.0, -2.0, 3.0, -4.0)
-        it "returns the product of a tuple and a number" do
+        it "returns the product of a tuple and a scalar" do
             assert (a * 3.5).equal?Tuple.new(3.5, -7.0, 10.5, -14.0)
         end
     end
 
     describe 'multiplication by a fraction' do
         a = Tuple.new(1.0, -2.0, 3.0, -4.0)
-        it "returns the product of a tuple and a number" do
+        it "returns the product of a tuple and a fraction" do
             assert (a * 0.5).equal?Tuple.new(0.5, -1.0, 1.5, -2.0)
         end
     end
 
-    # describe 'division' do
-    #     a = Tuple.new(1.0, -2.0, 3.0, -4.0)
-    #     it "returns the product of a tuple and a number" do
-    #         assert (a * 3.5).equal?Tuple.new(3.5, -7.0, 10.5, -14)
-    #     end
-    # end
+    describe 'division' do
+        a = Tuple.new(1.0, -2.0, 3.0, -4.0)
+        it "returns the difference between a tuple and a number" do
+            assert (a * 3.5).equal?Tuple.new(3.5, -7.0, 10.5, -14)
+        end
+    end
 end
