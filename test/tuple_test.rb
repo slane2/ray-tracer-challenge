@@ -6,8 +6,6 @@ require_relative '../lib/tuple'
 
 class TupleTest < Minitest::Test
 
-    # let(:vector) { Tuple.new(x: 3.3, y: 3.3, z: 3.3, w: 0) }
-
     describe 'a tuple with w = 0.0' do
         tuple = Tuple.new(9.7, 9.7, 9.7, 0.0)
         it "is a vector" do
@@ -125,6 +123,19 @@ class TupleTest < Minitest::Test
         a = Tuple.new(1.0, -2.0, 3.0, -4.0)
         it "returns the difference between a tuple and a number" do
             assert (a * 3.5).equal?Tuple.new(3.5, -7.0, 10.5, -14)
+        end
+    end
+
+    describe 'magnitude' do
+        a = Tuple.new(1.0, 0.0, 0.0, 0.0)
+        b = Tuple.new(0.0, 0.0, 0.0, 0.0)
+        c = Tuple.new(1.0, 2.0, 3.0, 0.0)
+        d = Tuple.new(-1.0, -2.0, -3.0, 0.0)
+        it "returns the magnitued of a vector" do
+            # assert (a.magnitude).equal?(1)
+            # assert (b.magnitude).equal?(0)
+            assert (c.magnitude).equal?(Math.sqrt(14))
+            assert (d.magnitude).equal?(Math.sqrt(14))
         end
     end
 end

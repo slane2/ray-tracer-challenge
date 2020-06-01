@@ -46,4 +46,8 @@ class Tuple
     def /(divisor)
         Tuple.new((self.x / divisor), (self.y / divisor), (self.z / divisor), (self.w / divisor))
     end
+
+    def magnitude
+        Math.sqrt(self.x**2 + self.y**2 + self.z**2)
+    end
 end
