@@ -142,5 +142,11 @@ class TupleTest < Minitest::Test
             vector = Tuple.new(4.0, 0.0, 0.0, 0.0)
             assert(vector.normalize).equal?(Tuple.new(1.0,0.0,0.0,0.0))
         end
+        it 'returns the magnitude of a normalized vector' do
+            tuple = Tuple.new(1, 2, 3, 1)
+            normalized_magnitude = (tuple.normalize).magnitude
+            expect normalized_magnitude.equal?(1)
+        end
     end
 end
+
