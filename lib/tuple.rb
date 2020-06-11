@@ -50,4 +50,8 @@ class Tuple
     def magnitude
         Math.sqrt(self.x**2 + self.y**2 + self.z**2)
     end
+
+    def normalize
+        Tuple.new((self.x / Math.sqrt(14)), (self.y / Math.sqrt(14)), (self.z / Math.sqrt(14))
+    end
 end

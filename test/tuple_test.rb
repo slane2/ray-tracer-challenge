@@ -132,8 +132,6 @@ class TupleTest < Minitest::Test
         c = Tuple.new(1.0, 2.0, 3.0, 0.0)
         d = Tuple.new(-1.0, -2.0, -3.0, 0.0)
         it "returns the magnitued of a vector" do
-            # assert (a.magnitude).equal?(1)
-            # assert (b.magnitude).equal?(0)
             assert (c.magnitude).equal?(Math.sqrt(14))
             assert (d.magnitude).equal?(Math.sqrt(14))
         end
