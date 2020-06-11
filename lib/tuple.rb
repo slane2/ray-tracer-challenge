@@ -52,6 +52,6 @@ class Tuple
     end
 
     def normalize
-        Tuple.new((self.x / Math.sqrt(14)), (self.y / Math.sqrt(14)), (self.z / Math.sqrt(14))
+        Tuple.new((self.x / Math.sqrt(14)), (self.y / Math.sqrt(14)), (self.z / Math.sqrt(14)), 0.0)
     end
 end

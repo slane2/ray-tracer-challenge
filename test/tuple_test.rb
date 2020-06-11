@@ -136,4 +136,11 @@ class TupleTest < Minitest::Test
             assert (d.magnitude).equal?(Math.sqrt(14))
         end
     end
+
+    describe 'normalize' do
+        it 'normalizes a vector' do
+            vector = Tuple.new(4.0, 0.0, 0.0, 0.0)
+            assert(vector.normalize).equal?(Tuple.new(1.0,0.0,0.0,0.0))
+        end
+    end
 end
